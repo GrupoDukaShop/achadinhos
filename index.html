@@ -1,129 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#ff5500" />
+  <title>Promoland – Achadinhos Shopee Todo Dia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  .lp { background: #ff6900; width: 100%; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-  .hero { background: #ff6900; padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem) clamp(1.2rem, 4vw, 2rem); text-align: center; }
-  .badge-top { display: inline-block; background: rgba(255,255,255,0.18); border: 1.5px solid rgba(255,255,255,0.3); color: #fff; font-size: clamp(10px, 2.5vw, 13px); font-weight: 700; letter-spacing: 1px; padding: 4px 12px; border-radius: 20px; margin-bottom: clamp(0.8rem, 3vw, 1.2rem); text-transform: uppercase; }
-  .logo-wrap { margin: 0 auto clamp(0.8rem, 3vw, 1rem); width: clamp(72px, 18vw, 96px); height: clamp(72px, 18vw, 96px); border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; border: 3px solid rgba(255,255,255,0.3); overflow: hidden; }
-  .logo-wrap img { width: 90%; height: 90%; object-fit: cover; border-radius: 50%; }
-  .hero h1 { color: #fff; font-size: clamp(1.5rem, 7vw, 2.2rem); font-weight: 900; line-height: 1.15; margin-bottom: 0.5rem; }
-  .hero h1 span { color: #ffe033; }
-  .hero p { color: #ffe8d0; font-size: clamp(0.85rem, 3.5vw, 1rem); margin-bottom: clamp(1rem, 3vw, 1.5rem); line-height: 1.5; padding: 0 0.5rem; }
-  .members-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 5px 14px; color: #fff; font-size: clamp(11px, 3vw, 13px); font-weight: 600; margin-bottom: clamp(1.2rem, 4vw, 1.8rem); }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block; animation: pulse 1.4s infinite; flex-shrink: 0; }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
-  .btn-main { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; max-width: 420px; margin: 0 auto 0.75rem; background: #25d366; color: #fff; font-size: clamp(0.95rem, 4vw, 1.1rem); font-weight: 800; padding: clamp(0.85rem, 3vw, 1rem) 1.5rem; border-radius: 14px; text-decoration: none; box-shadow: 0 6px 24px rgba(0,0,0,0.18); border: none; cursor: pointer; -webkit-tap-highlight-color: transparent; min-height: 52px; }
-  .btn-telegram { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; max-width: 420px; margin: 0 auto; background: rgba(255,255,255,0.15); color: #fff; font-size: clamp(0.85rem, 3.5vw, 0.95rem); font-weight: 600; padding: clamp(0.75rem, 2.5vw, 0.85rem) 1.5rem; border-radius: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.3); -webkit-tap-highlight-color: transparent; min-height: 48px; }
-  .wave { display: block; width: 100%; }
-  .benefits { background: #fff; padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem); }
-  .section-label { text-align: center; font-size: clamp(10px, 2.5vw, 12px); font-weight: 700; color: #ff6900; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.4rem; }
-  .section-title { text-align: center; font-size: clamp(1.1rem, 5vw, 1.4rem); font-weight: 800; color: #1a1a1a; margin-bottom: clamp(1rem, 4vw, 1.5rem); line-height: 1.3; }
-  .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(8px, 2.5vw, 12px); max-width: 480px; margin: 0 auto clamp(1.2rem, 4vw, 1.5rem); }
-  .benefit-card { background: #fff8f4; border: 1.5px solid #ffe5d0; border-radius: 12px; padding: clamp(0.75rem, 3vw, 1rem) clamp(0.6rem, 2vw, 0.75rem); text-align: center; }
-  .benefit-icon { font-size: clamp(1.5rem, 5vw, 1.8rem); margin-bottom: 0.35rem; display: block; }
-  .benefit-title { font-size: clamp(0.72rem, 2.8vw, 0.84rem); font-weight: 700; color: #c94200; margin-bottom: 2px; }
-  .benefit-desc { font-size: clamp(0.68rem, 2.5vw, 0.75rem); color: #888; line-height: 1.4; }
-  .btn-orange { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; max-width: 420px; margin: 0 auto; background: #ff6900; color: #fff; font-size: clamp(0.9rem, 3.8vw, 1.05rem); font-weight: 800; padding: clamp(0.85rem, 3vw, 1rem) 1.5rem; border-radius: 14px; text-decoration: none; box-shadow: 0 6px 24px rgba(255,105,0,0.35); border: none; cursor: pointer; -webkit-tap-highlight-color: transparent; min-height: 52px; }
-  .proof { background: #fff8f4; padding: clamp(1.5rem, 5vw, 2rem) clamp(1rem, 4vw, 1.5rem); }
-  .proof-list { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(8px, 2.5vw, 10px); }
-  .proof-item { background: #fff; border-radius: 12px; border: 1.5px solid #ffe5d0; padding: clamp(0.75rem, 3vw, 0.9rem) clamp(0.75rem, 3vw, 1rem); display: flex; align-items: flex-start; gap: 10px; }
-  .proof-avatar { width: clamp(32px, 8vw, 38px); height: clamp(32px, 8vw, 38px); border-radius: 50%; background: #ffd4b8; display: flex; align-items: center; justify-content: center; font-size: clamp(1rem, 3.5vw, 1.15rem); flex-shrink: 0; }
-  .proof-name { font-size: clamp(0.75rem, 3vw, 0.84rem); font-weight: 700; color: #c94200; margin-bottom: 1px; }
-  .proof-text { font-size: clamp(0.72rem, 2.8vw, 0.8rem); color: #555; line-height: 1.45; }
-  .stars { color: #f59e0b; font-size: clamp(0.75rem, 3vw, 0.85rem); margin-bottom: 2px; }
-  .cta-bottom { background: #ff6900; padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem); text-align: center; }
-  .cta-bottom h2 { color: #fff; font-size: clamp(1.1rem, 5vw, 1.4rem); font-weight: 900; margin-bottom: 0.5rem; line-height: 1.25; }
-  .cta-bottom p { color: #ffe8d0; font-size: clamp(0.82rem, 3.2vw, 0.9rem); margin-bottom: clamp(1rem, 4vw, 1.4rem); }
-  .urgency { display: inline-block; background: #ffe033; color: #7a4900; font-size: clamp(0.72rem, 2.8vw, 0.8rem); font-weight: 800; padding: 4px 12px; border-radius: 20px; margin-bottom: clamp(0.7rem, 3vw, 1rem); }
-  .btn-main-white { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; max-width: 420px; margin: 0 auto; background: #25d366; color: #fff; font-size: clamp(0.95rem, 4vw, 1.1rem); font-weight: 800; padding: clamp(0.9rem, 3vw, 1.1rem) 1.5rem; border-radius: 14px; text-decoration: none; box-shadow: 0 6px 28px rgba(0,0,0,0.22); border: none; cursor: pointer; -webkit-tap-highlight-color: transparent; min-height: 56px; }
-</style>
+    :root {
+      --orange: #ff5500;
+      --orange-dark: #d94400;
+      --orange-light: #ff7733;
+      --green-wa: #25d366;
+      --green-wa-dark: #1aab52;
+      --telegram: #2aabee;
+      --yellow: #ffe033;
+      --white: #ffffff;
+      --cream: #fff8f3;
+      --text-dark: #1a0a00;
+      --text-mid: #7a4520;
+      --text-muted: #b06030;
+      --radius: 18px;
+      --radius-sm: 12px;
+    }
 
-<div class="lp">
-  <div class="hero">
-    <div class="badge-top">🔴 ao vivo agora</div>
-    <div class="logo-wrap">
-      <img src="https://i.ibb.co/9HWNGr36/546774b8-13ee-4d2a-a7cb-fafad25793fc.jpg" alt="Promoland logo" />
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--orange);
+      color: var(--text-dark);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--orange);
+      padding: 36px 20px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.15);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+      padding: 5px 14px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .live-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: blink 1.4s infinite;
+    }
+
+    @keyframes blink {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:.4; transform:scale(1.5); }
+    }
+
+    .logo-ring {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      background: #fff;
+      margin: 0 auto 18px;
+      display: flex; align-items: center; justify-content: center;
+      border: 3px solid rgba(255,255,255,0.4);
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    }
+
+    .logo-ring img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .hero-title .accent { color: var(--yellow); }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.85);
+      font-size: 15px;
+      line-height: 1.55;
+      margin-bottom: 22px;
+      padding: 0 8px;
+    }
+
+    .members-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 100px;
+      padding: 6px 16px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 28px;
+    }
+
+    /* ── BOTÕES ── */
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      border: none;
+      border-radius: var(--radius);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .1s, filter .1s;
+      position: relative;
+    }
+
+    .btn:active { transform: scale(0.97); filter: brightness(0.93); }
+
+    .btn-wa {
+      background: var(--green-wa);
+      color: #fff;
+      font-size: 17px;
+      padding: 17px 20px;
+      min-height: 56px;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+      margin-bottom: 12px;
+    }
+
+    .btn-telegram {
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      font-size: 15px;
+      padding: 14px 20px;
+      min-height: 50px;
+      border: 1.5px solid rgba(255,255,255,0.28);
+    }
+
+    .btn-wa-orange {
+      background: var(--orange);
+      color: #fff;
+      font-size: 17px;
+      padding: 17px 20px;
+      min-height: 56px;
+      box-shadow: 0 6px 20px rgba(255,85,0,0.35);
+      margin-bottom: 0;
+    }
+
+    .btn-wa-final {
+      background: var(--green-wa);
+      color: #fff;
+      font-size: 18px;
+      padding: 18px 20px;
+      min-height: 60px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.22);
+    }
+
+    .btn-icon {
+      width: 26px; height: 26px;
+      flex-shrink: 0;
+    }
+
+    /* ── WAVE ── */
+    .wave { display: block; width: 100%; margin-bottom: -2px; }
+
+    /* ── BENEFITS ── */
+    .benefits {
+      background: var(--white);
+      padding: 32px 20px 28px;
+    }
+
+    .section-eyebrow {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--orange);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--cream);
+      border: 1.5px solid #ffdcc8;
+      border-radius: var(--radius-sm);
+      padding: 16px 12px;
+      text-align: center;
+    }
+
+    .card-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+    .card-title { font-size: 13px; font-weight: 800; color: var(--orange-dark); margin-bottom: 3px; }
+    .card-desc { font-size: 12px; color: #a06040; line-height: 1.4; }
+
+    /* ── SOCIAL PROOF ── */
+    .proof {
+      background: var(--cream);
+      padding: 28px 20px;
+    }
+
+    .testimonials { display: flex; flex-direction: column; gap: 10px; }
+
+    .testi {
+      background: var(--white);
+      border: 1.5px solid #ffdcc8;
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+    }
+
+    .testi-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: #ffd4b8;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .testi-stars { color: #f59e0b; font-size: 12px; margin-bottom: 2px; }
+    .testi-name { font-size: 13px; font-weight: 800; color: var(--orange-dark); margin-bottom: 3px; }
+    .testi-text { font-size: 13px; color: #666; line-height: 1.5; }
+
+    /* ── URGENCY / CTA FINAL ── */
+    .cta-bottom {
+      background: var(--orange);
+      padding: 36px 20px 48px;
+      text-align: center;
+    }
+
+    .urgency-tag {
+      display: inline-block;
+      background: var(--yellow);
+      color: #7a4900;
+      font-size: 12px;
+      font-weight: 900;
+      padding: 5px 16px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+
+    .cta-title {
+      color: #fff;
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .cta-sub {
+      color: rgba(255,255,255,0.82);
+      font-size: 14px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .free-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 100px;
+      padding: 4px 13px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 14px;
+    }
+
+    /* ── STICKY CTA (MOBILE) ── */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 999;
+      padding: 12px 16px 20px;
+      background: linear-gradient(to top, rgba(255,85,0,1) 70%, rgba(255,85,0,0));
+    }
+
+    @media (max-width: 600px) {
+      .sticky-cta { display: block; }
+      body { padding-bottom: 90px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="live-badge">
+      <span class="live-dot"></span>
+      Ativo agora
     </div>
-    <h1>Achadinhos da<br><span>Shopee</span> Todo Dia</h1>
-    <p>As melhores ofertas selecionadas pela metade do preço — direto no seu WhatsApp, grátis.</p>
+
+    <div class="logo-ring">
+      <img src="https://i.ibb.co/9HWNGr36/546774b8-13ee-4d2a-a7cb-fafad25793fc.jpg" alt="Promoland" />
+    </div>
+
+    <h1 class="hero-title">
+      Achadinhos da<br>
+      <span class="accent">Shopee</span> Todo Dia 🔥
+    </h1>
+
+    <p class="hero-sub">
+      As melhores ofertas selecionadas —<br>
+      pela metade do preço, direto no seu WhatsApp.<br>
+      <strong style="color:#fff;">100% grátis.</strong>
+    </p>
+
     <div class="members-pill">
-      <span class="dot"></span>
-      +50.000 membros ativos
+      ✨ Já somos +50.000 membros
     </div>
-    <a href="#" class="btn-main">💬 Entrar no Grupo do WhatsApp</a>
-  </div>
 
-  <svg class="wave" viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;margin-bottom:-2px;">
-    <path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="#fff"/>
+    <!-- BOTÃO PRINCIPAL -->
+    <a href="SEU_LINK_WHATSAPP_AQUI" class="btn btn-wa">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Entrar no Grupo do WhatsApp
+    </a>
+
+    <div style="height: 32px;"></div>
+  </section>
+
+  <!-- wave -->
+  <svg class="wave" viewBox="0 0 390 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,20 C100,40 290,0 390,20 L390,40 L0,40 Z" fill="#ffffff"/>
   </svg>
 
-  <div class="benefits">
-    <p class="section-label">por que entrar?</p>
-    <p class="section-title">Tudo que você precisa<br>numa só comunidade</p>
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <span class="benefit-icon">🎯</span>
-        <div class="benefit-title">Curadoria diária</div>
-        <div class="benefit-desc">Só as melhores ofertas, sem spam</div>
+  <!-- ── BENEFITS ── -->
+  <section class="benefits">
+    <p class="section-eyebrow">por que entrar?</p>
+    <h2 class="section-title">Tudo que você precisa<br>num só grupo</h2>
+
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-icon">🎯</span>
+        <div class="card-title">Curadoria diária</div>
+        <div class="card-desc">Só as melhores ofertas, sem spam</div>
       </div>
-      <div class="benefit-card">
-        <span class="benefit-icon">⚡</span>
-        <div class="benefit-title">Ofertas relâmpago</div>
-        <div class="benefit-desc">Antes de acabar o estoque</div>
+      <div class="card">
+        <span class="card-icon">⚡</span>
+        <div class="card-title">Ofertas relâmpago</div>
+        <div class="card-desc">Antes de acabar o estoque</div>
       </div>
-      <div class="benefit-card">
-        <span class="benefit-icon">💸</span>
-        <div class="benefit-title">100% gratuito</div>
-        <div class="benefit-desc">Sem mensalidade, para sempre</div>
+      <div class="card">
+        <span class="card-icon">💸</span>
+        <div class="card-title">100% gratuito</div>
+        <div class="card-desc">Sem mensalidade, para sempre</div>
       </div>
-      <div class="benefit-card">
-        <span class="benefit-icon">🛍️</span>
-        <div class="benefit-title">Shopee & mais</div>
-        <div class="benefit-desc">Amazon, Magalu e outros</div>
+      <div class="card">
+        <span class="card-icon">🛍️</span>
+        <div class="card-title">Shopee & mais</div>
+        <div class="card-desc">Amazon, Magalu e outros</div>
       </div>
     </div>
-    <a href="#" class="btn-orange">💬 Quero entrar agora — é grátis!</a>
-  </div>
 
-  <svg viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;background:#fff;margin-bottom:-2px;">
-    <path d="M0,20 C360,0 1080,40 1440,20 L1440,40 L0,40 Z" fill="#fff8f4"/>
+    <a href="SEU_LINK_WHATSAPP_AQUI" class="btn btn-wa-orange">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Quero entrar agora — é grátis!
+    </a>
+  </section>
+
+  <!-- wave invertido -->
+  <svg viewBox="0 0 390 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;background:#fff;margin-bottom:-2px;">
+    <path d="M0,20 C100,0 290,40 390,20 L390,40 L0,40 Z" fill="#fff8f3"/>
   </svg>
 
-  <div class="proof">
-    <p class="section-label">quem já está no grupo</p>
-    <p class="section-title">Membros que economizaram de verdade</p>
-    <div class="proof-list">
-      <div class="proof-item">
-        <div class="proof-avatar">👩</div>
+  <!-- ── PROVA SOCIAL ── -->
+  <section class="proof">
+    <p class="section-eyebrow">quem já está no grupo</p>
+    <h2 class="section-title" style="margin-bottom:16px;">Quem já economizou de verdade</h2>
+
+    <div class="testimonials">
+      <div class="testi">
+        <div class="testi-avatar">👩</div>
         <div>
-          <div class="stars">★★★★★</div>
-          <div class="proof-name">Ana Paula, SP</div>
-          <div class="proof-text">Economizei mais de R$200 só no mês passado. As ofertas chegam antes de todo mundo!</div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-name">Ana Paula · SP</div>
+          <div class="testi-text">Economizei mais de R$200 só no mês passado. As ofertas chegam antes de todo mundo!</div>
         </div>
       </div>
-      <div class="proof-item">
-        <div class="proof-avatar">👨</div>
+      <div class="testi">
+        <div class="testi-avatar">👨</div>
         <div>
-          <div class="stars">★★★★★</div>
-          <div class="proof-name">Carlos M., RJ</div>
-          <div class="proof-text">Achei fone bluetooth por R$19. Recomendo para todo mundo que quer economizar.</div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-name">Carlos M. · RJ</div>
+          <div class="testi-text">Achei fone bluetooth por R$19. Recomendo para quem quer economizar de verdade.</div>
         </div>
       </div>
-      <div class="proof-item">
-        <div class="proof-avatar">👩‍🦱</div>
+      <div class="testi">
+        <div class="testi-avatar">👩‍🦱</div>
         <div>
-          <div class="stars">★★★★★</div>
-          <div class="proof-name">Fernanda L., MG</div>
-          <div class="proof-text">Melhor grupo que já participei! Chega uma promoção nova todo dia sem exageros.</div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-name">Fernanda L. · MG</div>
+          <div class="testi-text">Melhor grupo que já participei! Chega oferta nova todo dia e sem spam nenhum.</div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- wave -->
+  <svg viewBox="0 0 390 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;background:#fff8f3;margin-bottom:-2px;">
+    <path d="M0,20 C100,40 290,0 390,20 L390,40 L0,40 Z" fill="#ff5500"/>
+  </svg>
+
+  <!-- ── CTA FINAL ── -->
+  <section class="cta-bottom">
+    <span class="urgency-tag">⏳ Vagas limitadas</span>
+    <h2 class="cta-title">Não perca mais<br>nenhuma oferta!</h2>
+    <p class="cta-sub">Junte-se a +50 mil pessoas<br>que já economizam todo dia.</p>
+
+    <a href="SEU_LINK_WHATSAPP_AQUI" class="btn btn-wa-final">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Entrar no Grupo Agora — Grátis
+    </a>
+
+    <div class="free-tag">✅ Gratuito · Sem cadastro · Sair quando quiser</div>
+  </section>
+
+  <!-- ── STICKY CTA (só no mobile) ── -->
+  <div class="sticky-cta">
+    <a href="SEU_LINK_WHATSAPP_AQUI" class="btn btn-wa-final" style="font-size:16px; padding:15px 20px; min-height:52px;">
+      <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Entrar no WhatsApp Agora
+    </a>
   </div>
 
-  <div class="cta-bottom">
-    <span class="urgency">⏳ Vagas limitadas</span>
-    <h2>Não perca mais nenhuma<br>oferta incrível!</h2>
-    <p>Junte-se a +50 mil pessoas que já economizam todo dia</p>
-    <a href="#" class="btn-main-white">💬 Entrar no Grupo Agora — Grátis</a>
-  </div>
-</div>
+</body>
+</html>

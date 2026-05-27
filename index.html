@@ -1,0 +1,140 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; }
+  .lp { background: #ff6900; min-height: 100vh; padding: 0; overflow: hidden; }
+  .hero { background: linear-gradient(160deg, #ff6900 0%, #ff4500 100%); padding: 2.5rem 1.5rem 2rem; text-align: center; position: relative; }
+  .badge-top { display: inline-block; background: #fff3; border: 1.5px solid #fff6; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 1px; padding: 5px 14px; border-radius: 20px; margin-bottom: 1.2rem; text-transform: uppercase; }
+  .logo-wrap { margin: 0 auto 1rem; width: 88px; height: 88px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; border: 3px solid #fff4; overflow: hidden; }
+  .logo-wrap img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; }
+  .hero h1 { color: #fff; font-size: 2rem; font-weight: 900; line-height: 1.15; margin-bottom: 0.5rem; text-shadow: 0 2px 8px #0003; }
+  .hero h1 span { color: #ffe033; }
+  .hero p { color: #ffe8d0; font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.5; }
+  .members-pill { display: inline-flex; align-items: center; gap: 6px; background: #fff2; border: 1px solid #fff3; border-radius: 20px; padding: 5px 14px; color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 1.8rem; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; display: inline-block; animation: pulse 1.4s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+  .btn-main { display: block; width: 100%; max-width: 380px; margin: 0 auto 0.8rem; background: #25d366; color: #fff; font-size: 1.1rem; font-weight: 800; padding: 1rem 1.5rem; border-radius: 14px; text-decoration: none; letter-spacing: 0.3px; box-shadow: 0 6px 24px #0003; border: none; cursor: pointer; transition: transform .12s, box-shadow .12s; }
+  .btn-main:active { transform: scale(0.97); box-shadow: 0 2px 10px #0003; }
+  .btn-telegram { display: block; width: 100%; max-width: 380px; margin: 0 auto; background: #fff2; color: #fff; font-size: 0.95rem; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 14px; text-decoration: none; border: 1.5px solid #fff4; transition: background .12s; }
+  .btn-telegram:active { background: #fff3; }
+  .wave { display: block; width: 100%; margin-bottom: -2px; }
+  .benefits { background: #fff; padding: 2rem 1.5rem; }
+  .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 480px; margin: 0 auto 1.5rem; }
+  .benefit-card { background: #fff8f4; border: 1.5px solid #ffe5d0; border-radius: 12px; padding: 1rem 0.75rem; text-align: center; }
+  .benefit-icon { font-size: 1.8rem; margin-bottom: 0.4rem; display: block; }
+  .benefit-title { font-size: 0.82rem; font-weight: 700; color: #c94200; margin-bottom: 2px; }
+  .benefit-desc { font-size: 0.75rem; color: #888; line-height: 1.4; }
+  .section-label { text-align: center; font-size: 0.72rem; font-weight: 700; color: #ff6900; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .section-title { text-align: center; font-size: 1.25rem; font-weight: 800; color: #1a1a1a; margin-bottom: 1.5rem; line-height: 1.3; }
+  .proof { background: #fff8f4; padding: 1.5rem 1.5rem 2rem; }
+  .proof-list { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+  .proof-item { background: #fff; border-radius: 12px; border: 1.5px solid #ffe5d0; padding: 0.9rem 1rem; display: flex; align-items: flex-start; gap: 10px; }
+  .proof-avatar { width: 36px; height: 36px; border-radius: 50%; background: #ffd4b8; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .proof-name { font-size: 0.82rem; font-weight: 700; color: #c94200; margin-bottom: 2px; }
+  .proof-text { font-size: 0.8rem; color: #555; line-height: 1.45; }
+  .stars { color: #f59e0b; font-size: 0.85rem; margin-bottom: 2px; }
+  .cta-bottom { background: #ff6900; padding: 2rem 1.5rem; text-align: center; }
+  .cta-bottom h2 { color: #fff; font-size: 1.3rem; font-weight: 900; margin-bottom: 0.5rem; }
+  .cta-bottom p { color: #ffe8d0; font-size: 0.9rem; margin-bottom: 1.4rem; }
+  .urgency { display: inline-block; background: #ffe033; color: #7a4900; font-size: 0.78rem; font-weight: 800; padding: 4px 12px; border-radius: 20px; margin-bottom: 1rem; }
+</style>
+
+<div class="lp">
+  <div class="hero">
+    <div class="badge-top">🔴 ao vivo agora</div>
+    <div class="logo-wrap">
+      <img src="https://i.ibb.co/9HWNGr36/546774b8-13ee-4d2a-a7cb-fafad25793fc.jpg" alt="Promoland" />
+    </div>
+    <h1>Achadinhos da<br><span>Shopee</span> Todo Dia</h1>
+    <p>As melhores ofertas selecionadas pela metade do preço — direto no seu WhatsApp, grátis.</p>
+    <div class="members-pill">
+      <span class="dot"></span>
+      +50.000 membros ativos
+    </div>
+    <a href="#" class="btn-main">
+      💬 Entrar no Grupo do WhatsApp
+    </a>
+    <a href="#" class="btn-telegram" style="margin-top:0.8rem">
+      ✈️ Grupo do Telegram
+    </a>
+  </div>
+
+  <svg class="wave" viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="#fff"/>
+  </svg>
+
+  <div class="benefits">
+    <p class="section-label">por que entrar?</p>
+    <p class="section-title">Tudo que você precisa<br>numa só comunidade</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-icon">🎯</span>
+        <div class="benefit-title">Curadoria diária</div>
+        <div class="benefit-desc">Só as melhores ofertas, sem spam</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">⚡</span>
+        <div class="benefit-title">Ofertas relâmpago</div>
+        <div class="benefit-desc">Antes de acabar o estoque</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">💸</span>
+        <div class="benefit-title">100% gratuito</div>
+        <div class="benefit-desc">Sem mensalidade, para sempre</div>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🛍️</span>
+        <div class="benefit-title">Shopee & mais</div>
+        <div class="benefit-desc">Amazon, Magalu e outros</div>
+      </div>
+    </div>
+    <a href="#" class="btn-main" style="background:#ff6900; box-shadow:0 6px 24px #ff690040;">
+      💬 Quero entrar agora — é grátis!
+    </a>
+  </div>
+
+  <svg viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;background:#fff;margin-bottom:-2px;">
+    <path d="M0,20 C360,0 1080,40 1440,20 L1440,40 L0,40 Z" fill="#fff8f4"/>
+  </svg>
+
+  <div class="proof">
+    <p class="section-label">quem já está no grupo</p>
+    <p class="section-title">Membros que economizaram de verdade</p>
+    <div class="proof-list">
+      <div class="proof-item">
+        <div class="proof-avatar">👩</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="proof-name">Ana Paula, SP</div>
+          <div class="proof-text">Economizei mais de R$200 só no mês passado. As ofertas chegam antes de todo mundo!</div>
+        </div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-avatar">👨</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="proof-name">Carlos M., RJ</div>
+          <div class="proof-text">Achei fone bluetooth por R$19. Recomendo para todo mundo que quer economizar.</div>
+        </div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-avatar">👩‍🦱</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="proof-name">Fernanda L., MG</div>
+          <div class="proof-text">Melhor grupo que já participei! Entrego uma promoção nova todo dia sem exageros.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-bottom">
+    <span class="urgency">⏳ Vagas limitadas</span>
+    <h2>Não perca mais nenhuma<br>oferta incrível!</h2>
+    <p>Junte-se a +50 mil pessoas que já economizam todo dia</p>
+    <a href="#" class="btn-main" style="max-width:380px;">
+      💬 Entrar no Grupo Agora — Grátis
+    </a>
+  </div>
+</div>
